@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.modal{
+  position: fixed !important;
+  left: 50%;
+  top: 50%;
+  height: 35%;
+  transform: translate(-50%,-50%);
+}
+
+span{
+  cursor: pointer;
+}
+
+.all{
+  position: absolute;
+  right: 0;
+  top: 0;
+}

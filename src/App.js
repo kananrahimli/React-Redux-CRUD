@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
-
+import ListItem from "./components/ListItem";
+import {BrowserRouter as Router ,Switch,Route} from 'react-router-dom'
+import Details from "./components/Details";
+import AddListItem from "./components/AddListItem";
+import PutListItem from "./components/PutListItem";
+import './index.css'
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="d-flex jsutify-content-center align-items-center" style={{minHeight:'100vh'}}>
+       <div className="ui raised very padded text container segment ">
+      {/* HEADER */}
+
+      <Router>
+        <Switch>
+           <Route exact path='/'>
+             <ListItem></ListItem>
+           </Route>
+           <Route exact path='/posts/:id'>
+             <Details></Details>
+           </Route>
+           <Route exact path='/add-item'>
+             <AddListItem></AddListItem>
+           </Route>
+           <Route exact path='/posts/:id/edit'>
+             <PutListItem></PutListItem>
+           </Route>
+        </Switch>
+      </Router>
+     
     </div>
+    </div>
+   
   );
 }
 
